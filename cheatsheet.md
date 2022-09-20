@@ -28,7 +28,7 @@ A good practice is to backup the original yaml before edit: `cp kube-apiserver.y
 
 Edit kube-apiserver: `vi /etc/kubernetes/manifests/kube-apiserver.yaml`
 
-## Users and Groups
+## USERS & GROUPS
 
 Check UID of root: `id root` or `cat /etc/passwd | grep root`
 
@@ -36,8 +36,31 @@ Setup a new password for user1: `passwd user1`
 
 Delete an user: `userdel user1`
 
-Delete a group: 'groupdel group1`
+Delete a group: `groupdel group1`
 
 Suspend an user and prevent the suer to login: `usermod -s /usr/sbin/nologin user1`
 
+Add a user with home directory (home/user1), bash login, part of admin group and uid 2328:
+`useradd -d /home/user1 -s /bin/bash -G admin -u 2328 user1`
 
+## SYSTEM HARDENING
+
+Check installed packages on Ubuntu: `apt list --installed`
+
+Show install kernel modules: `lsmod`
+
+List all service units files: `systemctl list-units --all`
+
+Stop a service (e.g: nginx): `systemctl stop nginx.service`
+
+Find the location of the service: `systemctl status nginx.service`
+
+Remove the service: `rm /lib/systemd/system/nginx.service`
+
+Deny a kernel module (e.g: evbug): `vi /etc/modprobe.d/blacklist.conf`
+
+Remove a specific package (e.g.: nginx): `apt remove nginx -y`
+
+Identify the service listening on specific port (e.g: 9090): `netstat -natp | grep 9090`
+
+Kill/stop the service to free the port (e.g: apache2): `systemctl stop apache2`
