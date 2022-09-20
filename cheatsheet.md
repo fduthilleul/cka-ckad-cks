@@ -64,3 +64,5 @@ Remove a specific package (e.g.: nginx): `apt remove nginx -y`
 Identify the service listening on specific port (e.g: 9090): `netstat -natp | grep 9090`
 
 Kill/stop the service to free the port (e.g: apache2): `systemctl stop apache2`
+
+Install latest version available in repos for a specific service (e.g: wget): `apt install wget -y`
