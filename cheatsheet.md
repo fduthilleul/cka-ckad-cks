@@ -96,4 +96,6 @@ Trace syscalls for a specific command (e.g ls): `strace -o outputfile ls`
 
 ## RUNTIME
 
-Check what is the runtime used: `kubectl get nodes -o wide`
+Check what is the runtime used (docker, crio or others): `kubectl get nodes -o wide`
+
+Check the default runtime in Docker: `docker info | grep Runtime`
