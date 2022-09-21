@@ -20,9 +20,9 @@ Save the YAML definition of a specific pod in a file: `kubectl get pod nginx -o 
 
 ## DELETE
 
-Delete a pod: kubectl delete pod nginx
+Delete a pod: `kubectl delete pod nginx`
 
-Delete a pod (faster, not recommended in production): kubectl delete pod nginx --force
+Delete a pod (faster, not recommended in production): `kubectl delete pod nginx --force
 
 ## DESCRIBE
 
