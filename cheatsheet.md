@@ -66,3 +66,12 @@ Identify the service listening on specific port (e.g: 9090): `netstat -natp | gr
 Kill/stop the service to free the port (e.g: apache2): `systemctl stop apache2`
 
 Install latest version available in repos for a specific service (e.g: wget): `apt install wget -y`
+
+## SECCOMP
+
+Useful programs: strace, tracee
+Seccomp profile default location: /var/lib/kubelet/seccomp
+
+Trace syscalls for a specific command (e.g ls): `strace -o outputfile ls`
+
+
