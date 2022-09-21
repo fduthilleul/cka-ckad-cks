@@ -108,4 +108,14 @@ Useful directory for ssh: `cd ~/.ssh`
 
 Passing the private key while connecting to a server: `ssh -i`
 
+Copy the ssh public key to remote system: `ssh-copy-id -i <path-to-pub-key> user1@remote`
+
+Connect to the remote system passing your private key: `ssh -i <path-to-private-key> user1@remote`
+
+Start an ssh-agent that will hold the private key: `eval $(ssh-agent)``
+
+
+
+
+
 
