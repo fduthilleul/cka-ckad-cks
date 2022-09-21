@@ -13,4 +13,4 @@ spec:
     name: ubuntu-sleeper
     securityContext:
       capabilities:
-        add: ["SYS_TIME"]
+        add: ["SYS_TIME", "NET_ADMIN"]
