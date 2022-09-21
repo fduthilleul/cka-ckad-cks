@@ -18,6 +18,12 @@ List a specific pod (e.g. nginx) in YAML format: `kubectl get pod nginx -o yaml`
 
 Save the YAML definition of a specific pod in a file: `kubectl get pod nginx -o yaml > webserver.yaml`
 
+## DELETE
+
+Delete a pod: kubectl delete pod nginx
+
+Delete a pod (faster, not recommended in production): kubectl delete pod nginx --force
+
 ## DESCRIBE
 
 Describe a pod (e.g. nginx): `kubectl describe pod nginx`
