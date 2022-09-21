@@ -104,6 +104,8 @@ Check the runtime classes: `kubectl describe runtimeclasses`
 
 ## SSH
 
+Useful directory for ssh: `cd ~/.ssh` 
+
 Passing the private key while connecting to a server: `ssh -i`
 
 
