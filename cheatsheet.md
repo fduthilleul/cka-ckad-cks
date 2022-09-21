@@ -112,9 +112,15 @@ Copy the ssh public key to remote system: `ssh-copy-id -i <path-to-pub-key> user
 
 Connect to the remote system passing your private key: `ssh -i <path-to-private-key> user1@remote`
 
-Start an ssh-agent that will hold the private key: `eval $(ssh-agent)``
+Start an ssh-agent that will hold the private key: `eval $(ssh-agent)`
 
+## OPA
 
+Download OPA: `curl -L -o opa https://github.com/open-policy-agent/opa/releases/download/v0.38.1/opa_linux_amd64`
+
+Run OPA: `./opa run -s &`
+
+Test a rego file: `./opa test example.rego`
 
 
 
