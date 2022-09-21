@@ -12,9 +12,21 @@ List all pods in all namespaces: `kubectl get pods -A`
 
 List all pods in a specific namespace (e.g. alpha): `kubectl -n alpha get pods`
 
-List a specific pod (e.g. webserver) in YAML format: `kubectl get pod webserver -o yaml`
+List a specific pod (e.g. nginx) in YAML format: `kubectl get pod nginx -o yaml`
 
-Save the YAML definition of a specific pod in a file: `kubectl get pod webserver -o yaml > webserver.yaml`
+Save the YAML definition of a specific pod in a file: `kubectl get pod nginx -o yaml > webserver.yaml`
+
+## DESCRIBE
+
+Describe a pod (e.g. nginx): `kubectl describe pod nginx`
+
+## EXEC
+
+Exec into a pod and check the user running that pod: `kubectl exec nginx -- whoami`
+
+## EDIT
+
+Edit the pod to modify its configuration: `kubectl edit pod nginx`
 
 ## AUDIT
 
