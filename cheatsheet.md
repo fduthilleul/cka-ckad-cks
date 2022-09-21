@@ -94,4 +94,6 @@ Seccomp profile default location: /var/lib/kubelet/seccomp
 
 Trace syscalls for a specific command (e.g ls): `strace -o outputfile ls`
 
+## RUNTIME
 
+Check what is the runtime used: `kubectl get nodes -o wide`
