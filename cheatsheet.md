@@ -101,3 +101,9 @@ Check what is the runtime used (docker, crio or others): `kubectl get nodes -o w
 Check the default runtime in Docker: `docker info | grep Runtime`
 
 Check the runtime classes: `kubectl describe runtimeclasses`
+
+## SSH
+
+Passing the private key while connecting to a server: `ssh -i`
+
+
