@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    run: dev-app
+  name: dev-app
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 30081
+  selector:
+    run: dev-app
+  type: NodePort
+status:
+  loadBalancer: {}
