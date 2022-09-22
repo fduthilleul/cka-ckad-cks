@@ -11,7 +11,3 @@ spec:
   hostPath:
       # Ensure the file directory is created.
       path: /mnt/data
-CheckCompleteIncomplete
-format_list_bulleted
-Details
-TEST AGAIN
