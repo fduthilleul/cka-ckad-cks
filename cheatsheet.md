@@ -122,6 +122,16 @@ Run OPA: `./opa run -s &`
 
 Test a rego file: `./opa test example.rego`
 
+## BACKUP AND RESTORE
+
+Check version of etcd running on the cluster: `kubectl -n kube-system describe pod etcdpodname`
+
+Take a snapshot of the etcd database: `ETCDCTL_API=3 etcdctl --endpoints=https://[127.0.0.1]:2379 \
+--cacert=/etc/kubernetes/pki/etcd/ca.crt \
+--cert=/etc/kubernetes/pki/etcd/server.crt \
+--key=/etc/kubernetes/pki/etcd/server.key \
+snapshot save /opt/snapshot-pre-boot.db`
+
 
 
 
