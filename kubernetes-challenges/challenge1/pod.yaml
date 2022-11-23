@@ -6,6 +6,9 @@
 # k run jekyll --image=kodekloud/jekyll-serve --labels="run=jekyll"
 # k get po jekyll -o yaml > pod.yaml
 # k create -f pod.yaml
+# k get role -n development
+# k describe -n development role developer-role
+# k describe -n development rolebindings 
 ---
 apiVersion: v1
 kind: Pod
