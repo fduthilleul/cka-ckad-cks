@@ -9,6 +9,7 @@
 # k get role -n development
 # k describe -n development role developer-role
 # k describe -n development rolebindings 
+# kubectl config use-context developer --user=martin --cluster=kubernetes
 ---
 apiVersion: v1
 kind: Pod
@@ -82,7 +83,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app.kubernetes.io/name: jekyll
+    run: jekyll
   ports:
     - port: 8080
       targetPort: 4000
