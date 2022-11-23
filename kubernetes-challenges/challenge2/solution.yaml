@@ -1,0 +1,8 @@
+# kubectl get nodes
+# vi /root/.kube/config
+# Correct the port number
+# crictl ps -a | grep -i api
+# docker ps -a | grep -i api
+# docker logs containerID
+# kubectl uncordon node01
+# scp -r /media/* node01:/test
