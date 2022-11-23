@@ -73,3 +73,17 @@ roleRef:
   kind: Role
   name: developer-role
   apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jekyll
+  namespace: development
+spec:
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: jekyll
+  ports:
+    - port: 8080
+      targetPort: 4000
+      nodePort: 30097
