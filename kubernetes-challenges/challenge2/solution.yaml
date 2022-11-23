@@ -6,3 +6,8 @@
 # docker logs containerID
 # kubectl uncordon node01
 # scp -r /media/* node01:/test
+# k get -n kube-system po
+# k get deploy -n kube-system
+# k edit deployment -n kube-system coredns
+
+---
