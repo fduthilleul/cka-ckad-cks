@@ -5,10 +5,14 @@
 # docker ps -a | grep -i api
 # docker logs containerID
 # kubectl uncordon node01
-# scp -r /media/* node01:/test
+# vi /etc/kubernetes/manifests/kube-apiserver.yaml
+# scp -r /media/* node01:/web
 # k get -n kube-system po
 # k get deploy -n kube-system
 # k edit deployment -n kube-system coredns
+# k create -f data-pv.yaml
+# k create -f data-pvc.yaml
+# ket get pv,pvs
 
 ---
 apiVersion: v1
@@ -38,3 +42,34 @@ spec:
    requests:
      storage: 1Gi
  storageClassName: local-storage
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gop-fs-service
+spec:
+  type: NodePort
+  selector:
+    run: gop-fileserver
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: gop-fileserver
+  name: gop-fileserver
+spec:
+  containers:
+  - image: kodekloud/fileserver
+    name: gop-fileserver
+    volumeMounts:
+    - mountPath: /web
+      name: data-store
+  volumes:
+  - name: data-store
+    persistentVolumeClaim:
+      claimName: data-pvc
