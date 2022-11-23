@@ -1,0 +1,25 @@
+# kubectl config set-context --current --namespace=development
+# k run jekyll --image=kodekloud/jekyll-serve --labels="run=jekyll"
+# k get po jekyll -o yaml > pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: jekyll
+  name: jekyll
+  namespace: development
+spec:
+  containers:
+  - image: kodekloud/jekyll-serve
+    name: jekyll
+    volumeMounts:
+    - mountPath: /site
+      name: site
+  initContainers:
+  - name: copy-jekyll-site
+    image: kodekloud/jekyll
+    command: ['jekyll', 'new', 'site']
+    volumeMounts:
+    - mountPath: /site
+      name: site
