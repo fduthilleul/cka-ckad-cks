@@ -10,7 +10,21 @@
 # k get deploy -n kube-system
 # k edit deployment -n kube-system coredns
 
-
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: data-pv
+spec: 
+ capacity:
+   storage: 1Gi
+ accessModes:
+    - ReadWriteMany
+ volumeMode: Filesystem
+ persistentVolumeReclaimPolicy: Recycle
+ storageClassName: local-storage
+ hostPath:
+   path: /web
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
