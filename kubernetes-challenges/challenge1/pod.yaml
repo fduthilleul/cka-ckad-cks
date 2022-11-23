@@ -85,6 +85,7 @@ spec:
   selector:
     run: jekyll
   ports:
-    - port: 8080
+    - protocol: TCP
+      port: 8080
       targetPort: 4000
       nodePort: 30097
