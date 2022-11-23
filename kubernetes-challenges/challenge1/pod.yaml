@@ -26,3 +26,5 @@ spec:
       name: site
   volumes:
   - name: site
+    persistentVolumeClaim:
+      claimName: jekyll-site
