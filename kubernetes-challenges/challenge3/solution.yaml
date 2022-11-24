@@ -1,6 +1,6 @@
 # k create ns vote
 # k get ns 
-
+kubectl create deployment result-deployment --image=kodekloud/examplevotingapp_result:before --dry-run=client -o yaml > result-deployment.yaml
 ---
 apiVersion: v1
 kind: Service
@@ -120,3 +120,20 @@ spec:
       volumes:
         - name: db-data
           emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: result-service
+  namespace: vote
+spec:
+  type: NodePort
+  selector:
+    app: result-deployment
+  ports:
+    - protocol: TCP
+      port: 5001
+      targetPort: 80
+      nodePort: 31001
+---
+
