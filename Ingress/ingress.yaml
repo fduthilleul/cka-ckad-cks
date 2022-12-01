@@ -4,12 +4,8 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
-  creationTimestamp: "2022-12-01T12:03:04Z"
-  generation: 1
   name: ingress-wear-watch
   namespace: app-space
-  resourceVersion: "937"
-  uid: bc4813af-0922-4352-9322-70430242f110
 spec:
   rules:
   - http:
@@ -28,7 +24,3 @@ spec:
               number: 8080
         path: /watch
         pathType: Prefix
-status:
-  loadBalancer:
-    ingress:
-    - ip: 10.104.44.8
