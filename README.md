@@ -9,3 +9,11 @@ https://github.com/walidshaari/Kubernetes-Certified-Administrator \
 https://www.linkedin.com/pulse/from-zero-cka-3-months-giuliano-ippoliti/ \
 https://www.linkedin.com/pulse/kubernetes-from-cka-ckad-giuliano-ippoliti/ \
 https://ivanitlearning.wordpress.com/2022/03/27/review-of-the-cka-and-ckad/ 
+
+### Hands-on Training
+
+|Website|URL|
+|-------|---|
+|KodeKloud|https://kodekloud.com/|
+|Killer.sh|https://killer.sh/|
+|Killercoda|https://killercoda.com/|
